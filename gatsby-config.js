@@ -5,6 +5,7 @@ module.exports = {
     author: '@gatsbyjs',
   },
   plugins: [
+    // Source the images
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -12,8 +13,17 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    // Source the blog posts
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'markdown-pages',
+        path: `${__dirname}/src/markdown-pages`,
+      },
+    },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-react-helmet',
+    'gatsby-transformer-remark',
   ],
 }
