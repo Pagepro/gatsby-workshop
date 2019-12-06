@@ -33,6 +33,7 @@ rules:
     - error
     - devDependencies: true
       peerDependencies: true
+  react/jsx-one-expression-per-line: 0      
   no-await-in-loop: 0
   function-paren-newline: 0
   indent: 2
