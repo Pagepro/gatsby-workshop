@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 
 import Layout from '../components/Layout'
-import PostsList from '../components/styles/PostsList'
+import PostsListStyled from '../components/styles/PostsListStyles'
 
 const BlogPage = ({ data }) => {
   const posts = data.allMarkdownRemark.edges.map(({ node }) => (
@@ -17,7 +17,7 @@ const BlogPage = ({ data }) => {
 
   return (
     <Layout>
-      <PostsList>
+      <PostsListStyled>
         {posts.map(post => (
           <li key={post.id}>
             <Link to={post.path}>
@@ -27,8 +27,7 @@ const BlogPage = ({ data }) => {
             </Link>
           </li>
         ))}
-      </PostsList>
-      <Link to="/">Home Page</Link>
+      </PostsListStyled>
     </Layout>
   )
 }

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const PostsList = styled.ul`
+const PostsListStyled = styled.ul`
   margin: 0;
 
   li {
@@ -24,6 +24,6 @@ const PostsList = styled.ul`
     color: var(--grey);
     margin-bottom: 1.25rem;
   }
-`;
+`
 
-export default PostsList
+export default PostsListStyled
