@@ -5,13 +5,13 @@ const PostsList = styled.ul`
 
   li {
     border-bottom: 1px solid var(--grey);
-    padding-bottom: 50px;
-    margin-bottom: 50px;
+    padding-bottom: 1.45rem;
+    margin-bottom: 1.45rem;
   }
 
   h2 {
     transition: 170ms ease;
-    margin-bottom: 10px;
+    margin-bottom: .75rem;
 
     &:hover {
       color: var(--purple);
@@ -22,7 +22,7 @@ const PostsList = styled.ul`
     display: block;
     text-transform: uppercase;
     color: var(--grey);
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
   }
 `;
 

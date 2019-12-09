@@ -1,10 +1,13 @@
-html {
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+:root {
   --white: #fff;
   --black: #000;
   --purple: rebeccapurple;
-  --grey: #ccc;
+  --grey: #bbb;
+}
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   color: var(--black);
   background: var(--white);
   box-sizing: border-box;
@@ -18,6 +21,10 @@ body {
 ol, ul {
   list-style: none;
   padding-left: 0;
+}
+
+h1 {
+  margin: 0;
 }
 
 *, *:before, *:after {
