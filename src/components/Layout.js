@@ -1,5 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
+import { Helmet } from 'react-helmet'
 
 import Header from './Header'
 import LayoutStyled from './styles/LayoutStyles'
@@ -18,6 +19,9 @@ const Layout = ({ children }) => {
 
   return (
     <LayoutStyled>
+      <Helmet>
+        <title>{data.site.siteMetadata.title}</title>
+      </Helmet>
       <Header siteTitle={data.site.siteMetadata.title} />
       <main>{children}</main>
       <footer>
