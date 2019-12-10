@@ -9,10 +9,10 @@ const Template = ({ data }) => {
 
   return (
     <Layout>
-      <div className="blog-post">
+      <div>
         <h1>{frontmatter.title}</h1>
         <h2>{frontmatter.date}</h2>
-        <div 
+        <div
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </div>
@@ -23,8 +23,8 @@ const Template = ({ data }) => {
 export default Template
 
 export const pageQuery = graphql`
-  query($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+  query($originalPath: String!) {
+    markdownRemark(frontmatter: { path: { eq: $originalPath } }) {
       html
       frontmatter {
         date(formatString: "MMMM DD, YYYY")

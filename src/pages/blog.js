@@ -5,7 +5,7 @@ import Layout from '../components/Layout'
 import PostsListStyled from '../components/styles/PostsListStyles'
 
 const BlogPage = ({ data }) => {
-  const posts = data.allMarkdownRemark.edges.map(({ node }) => (
+  const posts = data.allMarkdownRemark.nodes.map(node => (
     {
       id: node.id,
       date: node.frontmatter.date,
@@ -20,7 +20,7 @@ const BlogPage = ({ data }) => {
       <PostsListStyled>
         {posts.map(post => (
           <li key={post.id}>
-            <Link to={post.path}>
+            <Link to={`/blog/${post.path}`}>
               <h2>{post.title}</h2>
               <span>{post.date}</span>
               <p>{post.excerpt}</p>
@@ -35,15 +35,13 @@ const BlogPage = ({ data }) => {
 export const pageQuery = graphql`
   query {
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
-      edges {
-        node {
-          excerpt(pruneLength: 200)
-          id
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            path
-            title
-          }
+      nodes {
+        excerpt(pruneLength: 200)
+        id
+        frontmatter {
+          date(formatString: "MMMM DD, YYYY")
+          path
+          title
         }
       }
     }
