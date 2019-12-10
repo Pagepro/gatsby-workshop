@@ -5,25 +5,27 @@ import NavStyled from './styles/NavStyles'
 
 const Header = ({ siteTitle }) => (
   <header>
-    <h1>
-      <Link to="/">
-        {siteTitle}
-      </Link>
-    </h1>
-    <NavStyled>
-      <ul>
-        <li>
-          <Link activeClassName="active" to="/gallery">
-            Gallery
-          </Link>
-        </li>
-        <li>
-          <Link activeClassName="active" to="/blog">
-            Blog
-          </Link>
-        </li>
-      </ul>
-    </NavStyled>
+    <div>
+      <h1>
+        <Link to="/">
+          {siteTitle}
+        </Link>
+      </h1>
+      <NavStyled>
+        <ul>
+          <li>
+            <Link activeClassName="active" to="/page-2">
+              Page 2
+            </Link>
+          </li>
+          <li>
+            <Link activeClassName="active" to="/blog">
+              Blog
+            </Link>
+          </li>
+        </ul>
+      </NavStyled>
+    </div>
   </header>
 )
 
