@@ -14,8 +14,8 @@ const Header = ({ siteTitle }) => (
       <NavStyled>
         <ul>
           <li>
-            <Link activeClassName="active" to="/page-2">
-              Page 2
+            <Link activeClassName="active" to="/gallery">
+              Gallery
             </Link>
           </li>
           <li>

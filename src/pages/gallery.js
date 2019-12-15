@@ -7,7 +7,8 @@ import Image from '../components/Image'
 
 const SecondPage = ({ data }) => (
   <Layout>
-    <h1>Second Page</h1>
+    <h1>Gallery</h1>
+    <p>This is gallery of pictures!</p>
     <div style={{ maxWidth: '250px' }}>
       <Image />
     </div>

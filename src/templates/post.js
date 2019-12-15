@@ -1,19 +1,17 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-
 import Layout from '../components/Layout'
 
 const Template = ({ data }) => {
-  const { markdownRemark } = data // data.markdownRemark holds your post data
-  const { frontmatter, html } = markdownRemark
+  const { markdownRemark: post } = data
 
   return (
     <Layout>
       <div>
-        <h1>{frontmatter.title}</h1>
-        <h2>{frontmatter.date}</h2>
+        <h1>{post.frontmatter.title}</h1>
+        <h2>{post.frontmatter.date}</h2>
         <div
-          dangerouslySetInnerHTML={{ __html: html }}
+          dangerouslySetInnerHTML={{ __html: post.html }}
         />
       </div>
     </Layout>
