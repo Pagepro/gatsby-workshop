@@ -19,7 +19,11 @@ const Header = ({ siteTitle }) => (
             </Link>
           </li>
           <li>
-            <Link activeClassName="active" to="/blog">
+            <Link
+              activeClassName="active"
+              to="/blog"
+              partiallyActive
+            >
               Blog
             </Link>
           </li>

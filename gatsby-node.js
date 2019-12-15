@@ -14,6 +14,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             id
             frontmatter {
               path
+              title
             }
           }
         }
@@ -25,12 +26,20 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     reporter.panicOnBuild('Error while running GraphQL query.')
     return
   }
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+
+  const posts = result.data.allMarkdownRemark.edges
+
+  posts.forEach(({ node }, index) => {
+    const prev = index === 0 ? null : posts[index - 1].node
+    const next = index === posts.length - 1 ? null : posts[index + 1].node
+
     createPage({
       path: `blog/${node.frontmatter.path}`,
       component: blogPostTemplate,
       context: {
         originalPath: node.frontmatter.path,
+        prev,
+        next,
       }, // additional data can be passed via context
     })
   })

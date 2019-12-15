@@ -1,9 +1,12 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 
-const Template = ({ data }) => {
+import PaginationStyled from '../components/styles/PaginationStyles'
+
+const Template = ({ data, pageContext }) => {
   const { markdownRemark: post } = data
+  const { next, prev } = pageContext
 
   return (
     <Layout>
@@ -13,6 +16,18 @@ const Template = ({ data }) => {
         <div
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
+        <PaginationStyled>
+          {prev && (
+            <Link className="prev" to={`/blog/${prev.frontmatter.path}`}>
+              {prev.frontmatter.title}
+            </Link>
+          )}
+          {next && (
+            <Link className="next" to={`/blog/${next.frontmatter.path}`}>
+              {next.frontmatter.title}
+            </Link>
+          )}
+        </PaginationStyled>
       </div>
     </Layout>
   )
