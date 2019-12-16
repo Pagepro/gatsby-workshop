@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const StyledLayout = styled.div`
+const LayoutStyled = styled.div`
   header {
     background: var(--purple);
     margin-bottom: 1.45rem;
@@ -22,4 +22,4 @@ const StyledLayout = styled.div`
   }
 `
 
-export default StyledLayout
+export default LayoutStyled

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const StyledNav = styled.nav`
+const NavStyled = styled.nav`
   ul {
     display: flex;
     margin: 0;
@@ -21,4 +21,4 @@ const StyledNav = styled.nav`
   }
 `
 
-export default StyledNav
+export default NavStyled

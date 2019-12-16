@@ -1,7 +1,7 @@
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
-import StyledNav from './styles/StyledNav'
+import NavStyled from './styles/NavStyles'
 
 const Header = ({ siteTitle }) => (
   <header>
@@ -9,7 +9,7 @@ const Header = ({ siteTitle }) => (
       <h1>
         <Link to="/">{siteTitle}</Link>
       </h1>
-      <StyledNav>
+      <NavStyled>
         <ul>
           <li>
             <Link activeClassName="active" to="/gallery">
@@ -22,7 +22,7 @@ const Header = ({ siteTitle }) => (
             </Link>
           </li>
         </ul>
-      </StyledNav>
+      </NavStyled>
     </div>
   </header>
 )

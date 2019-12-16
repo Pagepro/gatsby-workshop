@@ -11,7 +11,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 import Header from './header'
 import './styles/global.css'
-import StyledLayout from './styles/StyledLayout'
+import LayoutStyled from './styles/LayoutStyles'
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <StyledLayout>
+    <LayoutStyled>
       <Header siteTitle={data.site.siteMetadata.title} />
       <main>{children}</main>
       <footer>
@@ -33,7 +33,7 @@ const Layout = ({ children }) => {
         {` `}
         <a href="https://www.gatsbyjs.org">Gatsby</a>
       </footer>
-    </StyledLayout>
+    </LayoutStyled>
   )
 }
 
