@@ -1,6 +1,6 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
-import Layout from '../components/Layout'
+import { graphql } from 'gatsby'
+import Layout from '../components/layout'
 
 const Template = ({ data }) => {
   const { markdownRemark: post } = data
