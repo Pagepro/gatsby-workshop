@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
-import Layout from '../components/Layout'
-import PaginationStyled from '../components/styles/PagionationStyles'
+import Layout from '../components/layout'
+import PaginationStyled from '../components/styles/PaginationStyles'
 
 const Template = ({ data, pageContext: { prev, next } }) => {
   const { markdownRemark: post } = data
