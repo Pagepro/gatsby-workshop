@@ -7,9 +7,7 @@ import SEO from "../components/seo"
 import Image from "../components/image"
 
 const Gallery = ({ data }) => {
-  console.log(data)
   const gatsbyImages = data.gatsbyImages.edges
-  console.log(gatsbyImages)
 
   return (
     <Layout>
