@@ -40,5 +40,6 @@ module.exports = {
         plugins: ['gatsby-remark-images'],
       },
     },
+    'gatsby-plugin-styled-components'
   ],
 }
