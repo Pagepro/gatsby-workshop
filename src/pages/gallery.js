@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 import Image from "../components/image"
 
 const Gallery = ({ data }) => {
-  const gatsbyImages = data.gatsbyImages.edges
+  const cats = data.cats.edges
 
   return (
     <Layout>
@@ -18,12 +18,12 @@ const Gallery = ({ data }) => {
         <Image />
       </div>
       <div style={{ maxWidth: '700px' }}>
-        <Img fluid={data.dog1.childImageSharp.fluid} alt="Picture" />
+        <Img fluid={data.cat1.childImageSharp.fluid} alt="Picture" />
       </div>
-      <Img fixed={data.dog2.childImageSharp.fixed} alt="Picture" />
-      {gatsbyImages.map(({ node: picture }) => (
-        <div key={picture.id}>
-          <Img fixed={picture.fixed} />
+      <Img fixed={data.cat2.childImageSharp.fixed} alt="Picture" />
+      {cats.map(({ node: cat }) => (
+        <div key={cat.id}>
+          <Img fixed={cat.fixed} />
         </div>
       ))}
     </Layout>
@@ -32,25 +32,25 @@ const Gallery = ({ data }) => {
 
 export const query = graphql`
   query {
-    dog1: file(relativePath: { eq: "dog1.jpeg" }) {
+    cat1: file(relativePath: { eq: "cat1.jpeg" }) {
       childImageSharp {
         fluid(maxWidth: 700, quality: 80) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
-    dog2: file(relativePath: { eq: "dog2.jpeg" }) {
+    cat2: file(relativePath: { eq: "cat2.jpeg" }) {
       childImageSharp {
         fixed(width: 700) {
           ...GatsbyImageSharpFixed_withWebp_tracedSVG
         }
       }
     }
-    gatsbyImages: allImageSharp(filter: {original: {src: {regex: "/gatsby/"}}}) {
+    cats: allImageSharp(filter: {original: {src: {regex: "/cat/"}}}) {
       edges {
         node {
           id
-          fixed(width: 300) {
+          fixed(width: 700) {
             originalName
             ...GatsbyImageSharpFixed
           }
